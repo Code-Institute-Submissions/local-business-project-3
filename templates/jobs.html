@@ -1,28 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
 
-{% for job in jobs %}
-{{ job.job_name }}<br>
-{{ job.job_category }}<br>
-{{ job.job_description }}<br>
-{{ job.job_location }}<br>
-{{ job.is_urgent }}<br>
-{{ job.due_date }}<br>
-{% endfor %}
-
 <ul class="collapsible">
+    {% for job in jobs %}
     <li>
-        <div class="collapsible-header white-text orange darken-3 text-shadow"><i class="fas fa-caret-down"></i>First</div>
-        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+        <div class="collapsible-header white-text orange darken-3 text-shadow">
+            <i class="fas fa-caret-down"></i>
+            <strong>{{ job.job_category }}-</strong> {{ job.job_name }} : {{ job.due_date }}
+            {% if job.is_urgent == "on" %}
+                <i class="fas fa-exclamation-circle orange-text text-lighten-2 tooltipped"
+                data-position="right" data-tooltip="URGENT!"></i>
+            {% endif %}
+        </div>
+        <div class="collapsible-body white">
+            <strong>Location: {{ job.job_location }}</strong>
+            <p>{{ job.job_description }}</p>
+        </div>
     </li>
-    <li>
-        <div class="collapsible-header white-text orange darken-3 text-shadow"><i class="fas fa-caret-down"></i>Second</div>
-        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-    <li>
-        <div class="collapsible-header white-text orange darken-3 text-shadow"><i class="fas fa-caret-down"></i>Third</div>
-        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
+    {% endfor %}
 </ul>
 
 
