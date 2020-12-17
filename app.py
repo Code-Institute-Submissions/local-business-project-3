@@ -97,6 +97,11 @@ def logout():
     return redirect(url_for("login"))
 
 
+@app.route("/request_job")
+def request_job():
+    return render_template("request_job.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
