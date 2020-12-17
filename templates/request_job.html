@@ -7,13 +7,13 @@
     <form class="col s12" method="POST" action="">
         <div class="row">
             <div class="input-field col s12">
-                <select>
-                    <option value="" disabled selected>Job Category</option>
-                    <option value="1">DIY</option>
-                    <option value="2">Food</option>
-                    <option value="3">Health & Beauty</option>
-                    <option value="4">Fitness</option>
+                <select id="job_category" name="job_category" class="validate" required>
+                    <option value="" disabled selected>Choose Category</option>
+                    {% for category in categories %}
+                        <option value="{{ category.job_category }}">{{ category.job_category }}</option>
+                    {% endfor %}
                 </select>
+                <label for="job_category">Job Category</label>
             </div>
         </div>
         <div class="row">

@@ -99,7 +99,8 @@ def logout():
 
 @app.route("/request_job")
 def request_job():
-    return render_template("request_job.html")
+    categories = mongo.db.categories.find().sort("job_category", 1)
+    return render_template("request_job.html", categories=categories)
 
 
 if __name__ == "__main__":
