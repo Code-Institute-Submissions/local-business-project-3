@@ -105,6 +105,7 @@ def request_job():
             "job_category": request.form.get("job_category"),
             "job_name": request.form.get("job_name"),
             "job_description": request.form.get("job_description"),
+            "job_location": request.form.get("job_location"),
             "is_urgent": is_urgent,
             "due_date": request.form.get("due_date"),
             "created_by": session["user"]
@@ -112,7 +113,7 @@ def request_job():
         mongo.db.jobs.insert_one(job)
         flash("Job Successfully Requested")
         return redirect(url_for("get_jobs"))
-        
+
     categories = mongo.db.categories.find().sort("job_category", 1)
     return render_template("request_job.html", categories=categories)
 
