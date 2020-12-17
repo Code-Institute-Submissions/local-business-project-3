@@ -4,25 +4,29 @@
 <h3 class="orange-text text-darken-4 center-align">Request Jobs</h3>
 
 <div class="row card-panel grey lighten-5">
-    <form class="col s12" method="POST" action="">
+    <form class="col s12" method="POST" action="{{ url_for('request_job') }}">
+        <!-- category selection -->
         <div class="row">
             <div class="input-field col s12">
                 <select id="job_category" name="job_category" class="validate" required>
                     <option value="" disabled selected>Choose Category</option>
                     {% for category in categories %}
-                        <option value="{{ category.job_category }}">{{ category.job_category }}</option>
+                    <option value="{{ category.job_category }}">{{ category.job_category }}</option>
                     {% endfor %}
                 </select>
                 <label for="job_category">Job Category</label>
             </div>
         </div>
+        <!-- job title -->
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-briefcase prefix orange-text text-darken-3"></i>
-                <input id="job_name" name="job_name" minlength="5" maxlength="15" type="text" class="validate" required>
+                <input id="job_name" name="job_name" minlength="5" 
+                maxlength="30" type="text" class="validate" required>
                 <label for="job_name">Job Name</label>
             </div>
         </div>
+        <!-- job description -->
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-align-left prefix orange-text text-darken-3"></i>
@@ -31,6 +35,7 @@
                 <label for="job_description">Job Description</label>
             </div>
         </div>
+        <!-- due date picker-->
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-calendar-alt prefix orange-text text-darken-3"></i>
@@ -38,6 +43,7 @@
                 <label for="due_date">Due Date</label>
             </div>
         </div>
+        <!-- is urgent toggle-->
         <div class="row">
             <div class="input-field col s12">
                 <div class="switch">
@@ -48,6 +54,14 @@
                         Is Urgent
                     </label>
                 </div>
+            </div>
+        </div>
+        <!-- submit button -->
+        <div class="row">
+            <div class="col s12 center-align">
+                <button type="submit" class="btn-large orange darken-3 text-shadow">
+                    Add Request <i class="fas fa-plus-square right"></i>
+                </button>
             </div>
         </div>
     </form>
