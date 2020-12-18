@@ -97,7 +97,7 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/request_job", methods= ["GET", "POST"])
+@app.route("/request_job", methods=["GET", "POST"])
 def request_job():
     if request.method == "POST":
         is_urgent = "on" if request.form.get("is_urgent") else "off"
@@ -120,6 +120,21 @@ def request_job():
 
 @app.route("/edit_job/<job_id>", methods=["GET", "POST"])
 def edit_job(job_id):
+
+    if request.method == "POST":
+        is_urgent = "on" if request.form.get("is_urgent") else "off"
+        submit = {
+            "job_category": request.form.get("job_category"),
+            "job_name": request.form.get("job_name"),
+            "job_description": request.form.get("job_description"),
+            "job_location": request.form.get("job_location"),
+            "is_urgent": is_urgent,
+            "due_date": request.form.get("due_date"),
+            "created_by": session["user"]
+        }
+        mongo.db.jobs.update({"_id": ObjectId(job_id)}, submit)
+        flash("Job Successfully Updated")
+
     job = mongo.db.jobs.find_one({"_id": ObjectId(job_id)})
     categories = mongo.db.categories.find().sort("job_category", 1)
     return render_template("edit_job.html", job=job, categories=categories)
