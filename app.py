@@ -120,7 +120,7 @@ def request_job():
 
 @app.route("/edit_job/<job_id>", methods=["GET", "POST"])
 def edit_job(job_id):
-    job = mongo.db.tasks.find_one({"_id": ObjectId(job_id)})
+    job = mongo.db.jobs.find_one({"_id": ObjectId(job_id)})
     categories = mongo.db.categories.find().sort("job_category", 1)
     return render_template("edit_job.html", job=job, categories=categories)
 
