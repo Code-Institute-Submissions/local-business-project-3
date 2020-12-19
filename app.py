@@ -25,6 +25,11 @@ def get_jobs():
     return render_template("jobs.html", jobs=jobs)
 
 
+@app.route("/home")
+def home():
+    return render_template("home.html")
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
