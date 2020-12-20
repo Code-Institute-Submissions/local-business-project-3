@@ -19,15 +19,22 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
+@app.route("/home")
+def home():
+    return render_template("home.html")
+
+
 @app.route("/get_jobs")
 def get_jobs():
     jobs = list(mongo.db.jobs.find())
     return render_template("jobs.html", jobs=jobs)
 
 
-@app.route("/home")
-def home():
-    return render_template("home.html")
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    jobs = list(mongo.db.jobs.find({"$text": {"$search": query}}))
+    return render_template("jobs.html", jobs=jobs)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -117,7 +124,7 @@ def request_job():
         }
         mongo.db.jobs.insert_one(job)
         flash("Job Successfully Requested")
-        return redirect(url_for("get_jobs"))
+        return redirect(url_for("home"))
 
     categories = mongo.db.categories.find().sort("job_category", 1)
     return render_template("request_job.html", categories=categories)
@@ -149,7 +156,7 @@ def edit_job(job_id):
 def delete_job(job_id):
     mongo.db.jobs.remove({"_id": ObjectId(job_id)})
     flash("Job Successfully Deleted")
-    return redirect(url_for("get_jobs"))
+    return redirect(url_for("home"))
 
 
 if __name__ == "__main__":
