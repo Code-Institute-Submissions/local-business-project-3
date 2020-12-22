@@ -159,6 +159,18 @@ def delete_job(job_id):
     return redirect(url_for("home"))
 
 
+@app.route("/add_comment/<job_id>", methods=["GET", "POST"])
+def add_comment(job_id):
+    if request.method == "POST":
+        send = {
+            "comments": ["text", "created_by"]
+        }
+        mongo.db.jobs.update({"_id": ObjectId(job_id)}, send)
+
+    job = mongo.db.jobs.find_one({"_id": ObjectId(job_id)})
+    return render_template("jobs.html", job=job)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

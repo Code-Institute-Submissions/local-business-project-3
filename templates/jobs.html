@@ -2,7 +2,7 @@
 {% block content %}
 
 <h3 class="orange-text text-darken-3 center-align">All Jobs</h3>
-
+<!-- search bar -->
 <div class="row card-panel grey lighten-5">
     <form action="{{ url_for('search') }}" method="post" class="col s12">
         <div class="row valign-wrapper center-align">
@@ -20,7 +20,7 @@
         </div>
     </form>
 </div>
-
+<!-- job requested -->
 {% if jobs|length > 0 %}
 <ul class="collapsible">
     {% for job in jobs %}
@@ -45,12 +45,27 @@
             <strong>Location: {{ job.job_location }}</strong>
             <p>{{ job.job_description }}</p>
             <p><em>by: {{ job.created_by }}</em></p>
-
+        </div>
+        <!-- Comment section -->
+        <div class="row card-panel grey lighten-5">
+            <form action="" method="post" class="col s12">
+                <div class="row valign-wrapper center-align">
+                    <div class="input-field col s12 m8">
+                        <input type="text" name="" id="" minlength="3" class="">
+                        <label for="">Comment</label>
+                    </div>
+                    <div class="col s12 m4">
+                        <button type="submit" class="orange darken-2 btn-small text-shadow">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </form>
         </div>
     </li>
     {% endfor %}
 </ul>
 {% else %}
-    <h3 class="red-text text-darken-3 center-align">No Results Found!</h3>
+<h3 class="red-text text-darken-3 center-align">No Results Found!</h3>
 {% endif %}
 {% endblock %}
