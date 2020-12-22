@@ -164,7 +164,7 @@ def add_comment(job_id):
     if request.method == "POST":
         comment = request.form.get("comment")
         mongo.db.jobs.update_one({"_id": ObjectId(job_id)},
-            {"$push": {"comments": "comment"}})
+                                 {"$push": {"comments": comment}})
 
         return redirect(url_for("get_jobs"))
 
