@@ -162,13 +162,11 @@ def delete_job(job_id):
 @app.route("/add_comment/<job_id>", methods=["GET", "POST"])
 def add_comment(job_id):
     if request.method == "POST":
-        send = {
-            "comments": ["text", "created_by"]
-        }
-        mongo.db.jobs.update({"_id": ObjectId(job_id)}, send)
+        comment = request.form.get("comment")
+        mongo.db.jobs.update_one({"_id": ObjectId(job_id)},
+            {"$push": {"comments": "comment"}})
 
-    job = mongo.db.jobs.find_one({"_id": ObjectId(job_id)})
-    return render_template("jobs.html", job=job)
+        return redirect(url_for("get_jobs"))
 
 
 if __name__ == "__main__":

@@ -4,7 +4,7 @@
 <h3 class="orange-text text-darken-3 center-align">All Jobs</h3>
 <!-- search bar -->
 <div class="row card-panel grey lighten-5">
-    <form action="{{ url_for('search') }}" method="post" class="col s12">
+    <form action="{{ url_for('search') }}" method="POST" class="col s12">
         <div class="row valign-wrapper center-align">
             <div class="input-field col s12 m8">
                 <i class="fas fa-search prefix orange-text text-darken-1"></i>
@@ -48,16 +48,25 @@
         </div>
         <!-- Comment section -->
         <div class="row card-panel grey lighten-5">
-            <form action="" method="post" class="col s12">
-                <div class="row valign-wrapper center-align">
+            <form action="{{ url_for('add_comment', job_id=job._id) }}" method="POST" class="col s12">
+                <div class="row center-align">
                     <div class="input-field col s12 m8">
-                        <input type="text" name="" id="" minlength="3" class="">
-                        <label for="">Comment</label>
+                        <input type="text" name="comment" id="comment" minlength="3" class="">
+                        <label for="comment">Comment</label>
                     </div>
                     <div class="col s12 m4">
                         <button type="submit" class="orange darken-2 btn-small text-shadow">
                             Submit
                         </button>
+                    </div>
+                    <div class="row">
+                        <ul class="col s12 m8">
+                            {% for comment in job.comments %}
+                            <li>
+                                {{ comment }}
+                            </li>
+                            {% endfor %}
+                        </ul>
                     </div>
                 </div>
             </form>
