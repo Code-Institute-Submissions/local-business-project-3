@@ -31,11 +31,14 @@ This is a page that allows user to sign up to, login and request jobs. It is mad
 
 *   ### Wireframes
 
-    -   Home Page Wireframe - [View](https://github.com/)
+    -   Home Page Wireframe - <img src="./wireframe/Home.jpg">
+    -   Jobs Page Wireframe - <img src="./wireframe/Jobs.jpg">
+    -   Login and Register Page Wireframe - <img src="./wireframe/LoginorRegister.jpg">
+    -   Request Job Page Wireframe - <img src="./wireframe/Requestjob.jpg">
 
-    -   Mobile Wireframe - [View](https://github.com/)
-
-    -   Contact Us Page Wireframe - [View](https://github.com/)
+    -   Mobile Home Wireframe - <img src="./wireframe/mobilehome.jpg">
+    -   Mobile Jobs Wireframe - <img src="./wireframe/mobilejobs.jpg">
+    -   Mobile Request Wireframe - <img src="./wireframe/mobilerequest.jpg">
 
 ## Features
 
