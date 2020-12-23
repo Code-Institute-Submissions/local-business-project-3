@@ -16,11 +16,11 @@ This is a page that allows user to sign up to, login and request jobs. It is mad
 
         1. As a Returning Visitor, I want to be able to edit my request at will in case anything changes.
         2. As a Returning Visitor, I want to see if anyone has been recommended or to check if anyone else has looked for the same thing I have.
-        3. As a Returning Visitor, I will have different request for different categories that I will want to query.
+        3. As a Returning Visitor, I will have different requests for different categories.
 
     -   #### Frequent User Goals
         1. As a Frequent User, I want to check to see if there are any newly added requests that match my local business.
-        2. As a Frequent User, I want to update my profile to keep with anything new or changes to my business.
+        2. As a Frequent User, I want to help out others and leave a comment to help them find what they are looking for.
         3. As a Frequent User, I want easily find my location and jobs that are being requested around there.
 
 -   ### Design
@@ -55,7 +55,7 @@ This is a page that allows user to sign up to, login and request jobs. It is mad
 ### Frameworks, Libraries & Programs Used
 
 1. [Materialize 1.0.0:](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
-    - Materialized was used to assist with the responsiveness and styling of the website.
+    - Materialize was used to assist with the responsiveness and styling of the website.
 1. [MongoDB:](https://ianlunn.github.io/Hover/)
     - MongoDB was used as the database for the Interactive code work.
 1. [Font Awesome:](https://fontawesome.com/)
@@ -66,15 +66,11 @@ This is a page that allows user to sign up to, login and request jobs. It is mad
     - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
 1. [GitHub:](https://github.com/)
     - GitHub is used to store the projects code after being pushed from Git.
-1. [Balsamiq:](https://balsamiq.com/)
-    - Balsamiq was used to create the [wireframes](https://github.com/) during the design process.
 
 ## Testing
 
-The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
-
--   [W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results](https://github.com/)
--   [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results](https://github.com/)
+-   [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results](https://jigsaw.w3.org/css-validator/validator)
+-   [PEP8onlinecheck](http://pep8online.com/) - [Results](http://pep8online.com/checkresult)
 
 ### Testing User Stories from User Experience (UX) Section
 
@@ -88,51 +84,54 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
     2. As a First Time Visitor, I want to be able to natigate as easily as I can throughout the site as well as finding content.
 
-        1. 
+        1. The navbar has everything needed to navigate through the website.
+        2. Thanks to the search feature, it's easy to find specific jobs, locations and categories.
 
     3. As a First Time Visitor, I want to look to see if other people have needed the same thing as I have. I also want to see recommendations as this will build trust in the business recommended.
-        1. 
+        1. It's easy to use the search feature and using key words and locations can really help.
+        2. Comments are useful for finding out if a business is good and trustworthy.
 
 -   #### Returning Visitor Goals
 
     1. As a Returning Visitor, I want to be able to edit my request at will in case anything changes.
 
-        1. 
+        1. It's easy to navigate to find my job that I requested.
+        2. The edit button for changing my request is easy to find.
+        3. Once the edit button is clicked on it has already filled the form with the same information making it easier to just change one or two things.
 
     2. As a Returning Visitor, I want to see if anyone has been recommended or to check if anyone else has looked for the same thing I have.
 
-        1. 
+        1. Using the search bar can help me find my specific job that I requested.
+        2. The comment section is easy to get to and is great for getting recommendations.
 
-    3. As a Returning Visitor, I will have different request for different categories that I will want to query.
+    3. As a Returning Visitor, I will have different requests for different categories.
 
-        1. 
+        1. Requesting more than 1 job is nice as I can request multiple jobs for different aspects in my life.
 
 -   #### Frequent User Goals
 
     1. As a Frequent User, I want to check to see if there are any newly added requests that match my local business.
 
-        1. The user would already be comfortable with the website layout and can easily click the banner message.
+        1. The user would already be comfortable with the website layout and can easily check for new requests and comments.
 
-    2. As a Frequent User, I want to update my profile to keep with anything new or changes to my business.
+    2. As a Frequent User, I want to help out others and leave a comment to help them find what they are looking for.
 
-        1. The user would already be comfortable with the website layout and can easily click the blog link
+        1. The user would already be comfortable with the website layout and can easily find their location and comment on any request they want.
 
     3. As a Frequent User, I want easily find my location and jobs that are being requested around there.
 
-        1. 
+        1. The user would already be comfortable using the search feature for finding jobs and locations.
 
 ### Further Testing
 
 -   The Website was tested on Google Chrome, Internet Explorer, Microsoft Edge and Safari browsers.
--   The website was viewed on a variety of devices such as Desktop, Laptop, Samsung Galaxy A20e and iPhone 8.
+-   The website was viewed on a variety of devices such as Desktop, Laptop and a variety of mobile devices.
 -   A large amount of testing was done to ensure that all pages were linking correctly.
 -   Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
 
 ### Known Bugs
 
--   On some mobile devices the Hero Image pushes the size of screen out more than any of the other content on the page.
--   A white gap can be seen to the right of the footer and navigation bar as a result.
--   On Microsoft Edge and Internet Explorer Browsers, all links in Navbar are pushed upwards when hovering over them.
+-   On some mobile devices smaller than 370px the logo begins to be too big for the navbar.
 
 ## Deployment
 
@@ -140,25 +139,25 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
 The project was deployed to GitHub Pages using the following steps...
 
-1. Log in to GitHub and locate the [GitHub Repository](https://github.com/)
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/JoeLouisDsantos/local-business-project-3)
 2. At the top of the Repository (not top of page), locate the "Settings" Button on the menu.
     - Alternatively Click [Here](https://raw.githubusercontent.com/) for a GIF demonstrating the process starting from Step 2.
 3. Scroll down the Settings page until you locate the "GitHub Pages" Section.
 4. Under "Source", click the dropdown called "None" and select "Master Branch".
 5. The page will automatically refresh.
-6. Scroll back down through the page to locate the now published site [link](https://github.com) in the "GitHub Pages" section.
+6. Scroll back down through the page to locate the now published site [link](https://joelouisdsantos.github.io/local-business-project-3/) in the "GitHub Pages" section.
 
 ### Forking the GitHub Repository
 
 By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
 
-1. Log in to GitHub and locate the [GitHub Repository](https://github.com/)
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/JoeLouisDsantos/local-business-project-3)
 2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
 3. You should now have a copy of the original repository in your GitHub account.
 
 ### Making a Local Clone
 
-1. Log in to GitHub and locate the [GitHub Repository](https://github.com/)
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/JoeLouisDsantos/local-business-project-3)
 2. Under the repository name, click "Clone or download".
 3. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
 4. Open Git Bash
@@ -166,21 +165,30 @@ By forking the GitHub Repository we make a copy of the original repository on ou
 6. Type `git clone`, and then paste the URL you copied in Step 3.
 
 ```
-$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+$ git clone https://github.com/JoeLouisDsantos/local-business-project-3.git
 ```
 
 7. Press Enter. Your local clone will be created.
 
-```
-$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
-> Cloning into `CI-Clone`...
-> remote: Counting objects: 10, done.
-> remote: Compressing objects: 100% (8/8), done.
-> remove: Total 10 (delta 1), reused 10 (delta 1)
-> Unpacking objects: 100% (10/10), done.
-```
-
 Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop) to retrieve pictures for some of the buttons and more detailed explanations of the above process.
+
+### Heroku
+
+1. Create a requirements.txt file using the terminal command pip freeze > requirements.txt.
+2. Create a Procfile using the terminal command echo web: python app.py > Procfile.
+3. git add, git commit and git push these to the Github pages.
+4. Create a new app on Heroku by clicking the New button on the dashboard. Give it a name and select the region.
+5. On the new app click Deploy > Deployment method and then select github pages.
+6. Confirm the linking of the Heroku app and the Github repository.
+7. In the Heroku app click settings, then go to reveal config values.
+8. Set the following config values:
+("IP", "0.0.0.0")
+("PORT", "5000")
+("SECRET_KEY", "your_secret_key_here")
+("MONGO_URI", "mongodb+srv://<USERNAME>:<PASSWORD>@<CLUSTER>-4g3i1.mongodb.net/<DATABASE>?retryWrites=true&w=majority")
+("MONGO_DBNAME", "")
+9. Go onto deploy, scroll down to manual deployment then click deploy branch.
+10. Now the app has been successfully deployed.
 
 ## Credits
 
